@@ -1,3 +1,10 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1787439531
+::res://::1787452205
 icon.svg::CompressedTexture2D::1144794755455088185::1787439528::1787439531::1::::<><><>0<>0<>f00b84ddffb90723d9d6dd1e3f5deb04<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+images.png::CompressedTexture2D::4310864020030664212::1787451544::1787451545::1::::<><><>0<>0<>0f971214b19e1d8eab596de59ce408bc<>res://.godot/imported/images.png-b603883770f213c0c175102e3045df3b.ctex::
+label.tscn::PackedScene::5797317867658700236::1787450939::0::1::::<><><>0<>0<><>::
+main.tscn::PackedScene::641069501705926529::1787451613::0::1::::<><><>0<>0<><>::
+::res://assets/::1787452187
+background.png::CompressedTexture2D::6541027920058106837::1616797148::1787452205::1::::<><><>0<>0<>ccddcf41c0088563da46d4e0d494ac8d<>res://.godot/imported/background.png-1fdba8b6a966ce2c2ffc607f7c096e95.ctex::
+floor.png::CompressedTexture2D::5023701520823496491::1616860232::1787452205::1::::<><><>0<>0<>60f5a03eff6dbd73fd806ddfbea6ac03<>res://.godot/imported/floor.png-38406586736af2fe805d7b886727ee47.ctex::
+player.png::CompressedTexture2D::792232731706722772::1616797148::1787452205::1::::<><><>0<>0<>efc744e692fb579f28ae153e55a4729e<>res://.godot/imported/player.png-be2216fcaabb5c62aa2466cd9a5726a8.ctex::
