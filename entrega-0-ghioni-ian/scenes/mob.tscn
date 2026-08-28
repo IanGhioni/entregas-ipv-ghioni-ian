@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://b66qeq45lf8o0"]
+
+[ext_resource type="Script" uid="uid://cj5mjo5sqw2t4" path="res://scripts/mob.gd" id="1_fqf00"]
+[ext_resource type="Texture2D" uid="uid://bxaodrt6osrea" path="res://assets/art/enemyFlyingAlt_1.png" id="2_4rdmx"]
+[ext_resource type="Texture2D" uid="uid://f0wp3c761kf8" path="res://assets/art/enemyFlyingAlt_2.png" id="3_ioejd"]
+[ext_resource type="Texture2D" uid="uid://pbhutshc8bta" path="res://assets/art/enemySwimming_1.png" id="4_hcmok"]
+[ext_resource type="Texture2D" uid="uid://dgq1g1ahkncck" path="res://assets/art/enemySwimming_2.png" id="5_i7c7a"]
+[ext_resource type="Texture2D" uid="uid://dvpju5lxnjxl6" path="res://assets/art/enemyWalking_1.png" id="6_cc6oo"]
+[ext_resource type="Texture2D" uid="uid://b3vobg1xygsts" path="res://assets/art/enemyWalking_2.png" id="7_75wl0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_idfvx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4rdmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ioejd")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hcmok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i7c7a")
+}],
+"loop": 1,
+"name": &"swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_cc6oo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_75wl0")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fqf00"]
+radius = 34.058773
+
+[node name="Mob" type="RigidBody2D" unique_id=232096352]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_fqf00")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1542745061]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_idfvx")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=317693921]
+position = Vector2(-6, -1)
+shape = SubResource("CircleShape2D_fqf00")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1096779483]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

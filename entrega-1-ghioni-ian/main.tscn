@@ -14,4 +14,4 @@ grow_vertical = 2
 texture = ExtResource("1_0xm2m")
 
 [node name="Player" parent="." unique_id=545007011 instance=ExtResource("1_ig7tw")]
-position = Vector2(580, 341)
+position = Vector2(624, 364)
