@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dhxor7hho74vr"]
+
+[ext_resource type="PackedScene" uid="uid://83wbwaosvprv" path="res://entities/abstract_projectile.tscn" id="1_txje5"]
+[ext_resource type="Texture2D" uid="uid://dy4fne65rpsc2" path="res://assets/textures/proyectile_player.png" id="2_kf17x"]
+
+[node name="Projectile" unique_id=169308845 instance=ExtResource("1_txje5")]
+position = Vector2(0.25000072, -0.7500001)
+scale = Vector2(1.0833334, 1.0277778)
+texture = ExtResource("2_kf17x")
+speed = 250.0
