@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://chasbkjw2xk0i"]
+
+[ext_resource type="Texture2D" uid="uid://d2ug0mybgeebc" path="res://assets/textures/turret.png" id="1_x4r7f"]
+[ext_resource type="Script" uid="uid://crs8mdjqkn4vd" path="res://entities/enemy/turret.gd" id="2_odw4x"]
+[ext_resource type="PackedScene" uid="uid://dibm20nii1nhb" path="res://entities/enemy/enemy_projectile.tscn" id="3_megvq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_veb20"]
+radius = 365.39822
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idfvx"]
+size = Vector2(36, 66.287125)
+
+[node name="Turret" type="StaticBody2D" unique_id=1770001763]
+position = Vector2(0, 0.50000286)
+scale = Vector2(1, 1.5538462)
+script = ExtResource("2_odw4x")
+projectile_scene = ExtResource("3_megvq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1245569405]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1637075187]
+shape = SubResource("CircleShape2D_veb20")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1636423869]
+texture = ExtResource("1_x4r7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1819154921]
+position = Vector2(0, 0.6435614)
+shape = SubResource("RectangleShape2D_idfvx")
+one_way_collision = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1339449537]
+wait_time = 0.513
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1228767861]
+position = Vector2(0, -30)
+
+[node name="WherePlayer" type="RayCast2D" parent="." unique_id=2063352678]
+target_position = Vector2(0, 42.797028)
+collision_mask = 3
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

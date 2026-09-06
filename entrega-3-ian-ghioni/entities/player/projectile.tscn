@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dhxor7hho74vr"]
+
+[ext_resource type="PackedScene" uid="uid://83wbwaosvprv" path="res://entities/abstract_projectile.tscn" id="1_txje5"]
+[ext_resource type="Texture2D" uid="uid://dy4fne65rpsc2" path="res://assets/textures/proyectile_player.png" id="2_kf17x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_okxkw"]
+
+[node name="Projectile" unique_id=169308845 instance=ExtResource("1_txje5")]
+position = Vector2(0.25000072, -0.7500001)
+scale = Vector2(1.0833334, 1.0277778)
+speed = 250.0
+
+[node name="Sprite2D" parent="." index="1" unique_id=992049579]
+texture = ExtResource("2_kf17x")
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1483323188]
+shape = SubResource("CircleShape2D_okxkw")
+
+[connection signal="delete_requested" from="." to="." method="_on_delete_requested"]

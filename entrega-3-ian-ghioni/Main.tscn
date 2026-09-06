@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bvdf74hiq7dvw"]
+
+[ext_resource type="Script" uid="uid://o5osiqshscd5" path="res://main.gd" id="1_cm0pq"]
+[ext_resource type="Texture2D" uid="uid://bnchqqn0xduh3" path="res://assets/textures/background.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://bdlwtu5ra66ds" path="res://entities/objects/ground.tscn" id="3_trn2v"]
+[ext_resource type="PackedScene" uid="uid://cm4rvav7wtvu1" path="res://entities/objects/obstaculo.tscn" id="4_3dxm6"]
+[ext_resource type="Texture2D" uid="uid://dy4fne65rpsc2" path="res://assets/textures/proyectile_player.png" id="5_03owx"]
+[ext_resource type="PackedScene" uid="uid://chasbkjw2xk0i" path="res://entities/enemy/turret.tscn" id="5_fos0i"]
+[ext_resource type="PackedScene" uid="uid://bhtm43d5gos10" path="res://entities/objects/plataforma.tscn" id="7_lgr22"]
+[ext_resource type="PackedScene" uid="uid://54ri53djn6mo" path="res://entities/objects/wall.tscn" id="8_trn2v"]
+[ext_resource type="PackedScene" uid="uid://tk32mits3dd2" path="res://entities/player/Player.tscn" id="9_wkp8b"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gk03p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n4y2n"]
+radius = 31.257
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vno4"]
+radius = 21.023796
+
+[node name="Main" type="Node" unique_id=1624152126]
+script = ExtResource("1_cm0pq")
+
+[node name="Background" type="TextureRect" parent="." unique_id=317390651]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -912.0
+offset_top = -984.0
+offset_right = 3049.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="Ground" parent="." unique_id=1304603146 instance=ExtResource("3_trn2v")]
+position = Vector2(62, 507)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Player" parent="." unique_id=2115761845 instance=ExtResource("9_wkp8b")]
+position = Vector2(389, 402)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=643454551]
+position = Vector2(218, 204)
+physics_material_override = SubResource("PhysicsMaterial_gk03p")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2" unique_id=700445392]
+position = Vector2(-0.4999981, -1.5000019)
+scale = Vector2(3.5, 3.7222223)
+texture = ExtResource("5_03owx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" unique_id=1277436888]
+shape = SubResource("CircleShape2D_n4y2n")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1427347969]
+position = Vector2(461, 313)
+physics_material_override = SubResource("PhysicsMaterial_gk03p")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=469915858]
+position = Vector2(-0.5000144, -0.49999976)
+scale = Vector2(2.7222211, 2.5)
+texture = ExtResource("5_03owx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=989519583]
+shape = SubResource("CircleShape2D_1vno4")
+
+[node name="Obstacle" parent="." unique_id=2083934390 instance=ExtResource("4_3dxm6")]
+position = Vector2(723, 442)
+
+[node name="Turret" parent="." unique_id=324094638 instance=ExtResource("5_fos0i")]
+position = Vector2(1322, 240)
+
+[node name="Turret2" parent="." unique_id=1770001763 instance=ExtResource("5_fos0i")]
+position = Vector2(2257, 134)
+
+[node name="Turret3" parent="." unique_id=747900266 instance=ExtResource("5_fos0i")]
+position = Vector2(2993, 9.000002)
+
+[node name="Turret4" parent="." unique_id=1307525357 instance=ExtResource("5_fos0i")]
+position = Vector2(2661, -224)
+
+[node name="Turret5" parent="." unique_id=1677213382 instance=ExtResource("5_fos0i")]
+position = Vector2(3064, -373)
+
+[node name="plataforma" parent="." unique_id=514761719 instance=ExtResource("7_lgr22")]
+position = Vector2(2310, 325)
+
+[node name="plataforma2" parent="." unique_id=1480099968 instance=ExtResource("7_lgr22")]
+position = Vector2(2614, 228)
+
+[node name="plataforma3" parent="." unique_id=246348325 instance=ExtResource("7_lgr22")]
+position = Vector2(2866, 100)
+
+[node name="plataforma4" parent="." unique_id=414904089 instance=ExtResource("7_lgr22")]
+position = Vector2(2583, -35)
+
+[node name="plataforma5" parent="." unique_id=1400795228 instance=ExtResource("7_lgr22")]
+position = Vector2(2928, -132)
+
+[node name="Wall1" parent="." unique_id=439854979 instance=ExtResource("8_trn2v")]
+
+[node name="Wall2" parent="." unique_id=1767889841 instance=ExtResource("8_trn2v")]
+position = Vector2(3328, -2)

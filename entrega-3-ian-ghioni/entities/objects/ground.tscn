@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bdlwtu5ra66ds"]
+
+[ext_resource type="Texture2D" uid="uid://ccjh23opjwx24" path="res://assets/textures/floor.png" id="1_yh8r4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idfvx"]
+size = Vector2(4924, 195)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1304603146]
+disable_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1127230690]
+offset_left = -1117.0
+offset_top = -35.0
+offset_right = 3830.0
+offset_bottom = 552.0
+texture = ExtResource("1_yh8r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926793248]
+position = Vector2(1341, 62)
+shape = SubResource("RectangleShape2D_idfvx")
