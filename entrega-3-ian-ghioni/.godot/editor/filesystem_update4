@@ -1,0 +1,7 @@
+res://default_env.tres
+res://Main.tscn
+res://character_body_2d.tscn
+res://main.gd
+res://entities/player/Player.tscn
+res://entities/player/Player.gd
+res://entities/abstract_projectile.gd
