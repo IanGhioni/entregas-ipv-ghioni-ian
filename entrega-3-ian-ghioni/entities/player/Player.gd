@@ -25,8 +25,15 @@ func _physics_process(delta):
 		cannon.fire()
 	if Input.is_action_just_pressed("jump") && is_on_floor():
 		velocity.y = jump_speed
-	
 	velocity.x += direction_optimized * speed
-	
 	move_and_slide()
+	# Check for collisions with RigidBody2D
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		if collider is RigidBody2D:
+			# Push the rigid body away using an impulse
+			var push_dir = -collision.get_normal()
+			collider.apply_impulse(push_dir * 50.0, collision.get_position() - collider.global_position)
 	
