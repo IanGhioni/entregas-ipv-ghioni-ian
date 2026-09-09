@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://btn8ju577efse"]
+
+[ext_resource type="PackedScene" uid="uid://bggtxdu5ba7u8" path="res://entities/abstract_projectile.tscn" id="1_w2mnl"]
+[ext_resource type="Texture2D" uid="uid://ci5g0baeu78ld" path="res://assets/Player/Sprites/Group 7 - 4.png" id="2_t1me6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpa8v"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl5p8"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf3yx"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl8dg"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shq02"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koyfl"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uk5p"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f418u"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mfy2"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(256, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qne7k"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(288, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0l5g"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(320, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr72d"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(352, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfftg"]
+atlas = ExtResource("2_t1me6")
+region = Rect2(384, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n38wy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpa8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl5p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf3yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl8dg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shq02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koyfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uk5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f418u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mfy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qne7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0l5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr72d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfftg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="HeroProjectile" unique_id=1341755580 instance=ExtResource("1_w2mnl")]
+speed = 200.0
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=531079236]
+position = Vector2(-12.999999, -9.536743e-07)
+rotation = -1.5760323
+scale = Vector2(0.65625, 0.671875)
+sprite_frames = SubResource("SpriteFrames_n38wy")
+frame = 7
