@@ -13,6 +13,7 @@ func set_values(projectile_container):
 func fire():
 	$WherePlayer.target_position = to_local(player.global_position)
 	$WherePlayer.force_raycast_update()
+	print($WherePlayer.is_colliding())
 	if $WherePlayer.is_colliding():
 		if $WherePlayer.get_collider() == player:
 			var projectile:Projectile = projectile_scene.instantiate()

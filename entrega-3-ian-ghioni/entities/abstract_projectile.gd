@@ -12,8 +12,6 @@ func _ready() -> void:
 	body_entered.connect(_on_collision)
 
 func _on_collision(body: Node2D):
-	print(body.name)
-	print(self.shooter)
 	if body == self.shooter: 
 		return
 	if body is CharacterBody2D:
